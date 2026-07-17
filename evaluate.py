@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 
 from config import TOP_K_PRINT_MULTIPLIER, TRUE_FEATURE_DIM
 from train import ALTASTrainer
-from utils import evaluate_feature_selection
+from utils import apply_mask_with_shuffle, evaluate_feature_selection
 
 
 @dataclass
@@ -40,7 +40,8 @@ def collect_test_outputs(
     for X_batch, Y_batch, S_batch in test_loader:
         X_batch, Y_batch = X_batch.to(device), Y_batch.to(device)
         _, mask = trainer.gen(X_batch, tau=1e-3, hard=True)
-        x_mask = X_batch * mask
+        # 与训练时一致: 用 shuffle-replace 把 mask 作用到 X, 避免分布漂移。
+        x_mask = apply_mask_with_shuffle(X_batch, mask)
         h_mask = trainer.ext(x_mask)
         logits = trainer.predictor(h_mask)
         preds = logits.argmax(dim=1)
