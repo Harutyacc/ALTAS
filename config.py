@@ -17,7 +17,7 @@ TSNE_RANDOM_STATE = 42
 class DataConfig:
     num_samples: int = 20000
     input_dim: int = 100
-    dataset_type: str = "Syn2"
+    dataset_type: str = "Syn4"
     batch_size: int = 256
     train_ratio: float = 0.8
 
@@ -29,7 +29,7 @@ class TrainConfig:
     lr_ep: float = 1e-4
     alpha: float = 1
     beta: float = 1
-    gamma: float = 0.5
+    gamma: float = 0.1
     n_critic: int = 1
     lambda_gp: float = 10.0
     tau_start: float = 1.0
