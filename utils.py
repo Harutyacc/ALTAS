@@ -307,27 +307,3 @@ def plot_retention_vs_accuracy(
     fig.tight_layout()
     plt.savefig(save_path, dpi=FIGURE_DPI)
     plt.close()
-
-
-def apply_mask_with_shuffle(
-    x: torch.Tensor, mask: torch.Tensor
-) -> torch.Tensor:
-    """把 Gen 输出的硬掩码作用到输入, 被掩位置用 batch 内其他样本的同特征填充。
-
-    公式::
-
-        idx         = randperm(B)              # batch 内打乱的索引
-        x_shuffled  = x[idx]                   # 边际分布与 x 完全一致
-        x_mask      = x * mask + (1 - mask) * x_shuffled
-
-    解决的痛点:
-      - mask=0 的位置不会塌缩成"恒为 0", 下游 Extractor / Predictor
-        能区分"这个 0 是被掩掉的"与"这个特征天然就接近 0"。
-      - Critic 看到的分布偏移是"同分布但样本错位", 真的有信息损失,
-        WGAN-GP 梯度方向更清晰。
-      - 因为 ``x_shuffled`` 用整数索引 gather, 对 x 保持可微, 因此在
-        Generator 分支对 mask 求梯度依旧传导: d(x_mask)/d(mask) = x - x_shuffled。
-    """
-    idx = torch.randperm(x.size(0), device=x.device)
-    x_shuffled = x[idx]
-    return x * mask + (1.0 - mask) * x_shuffled

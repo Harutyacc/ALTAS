@@ -8,12 +8,10 @@ import torch.nn as nn
 from torch import autograd
 
 from model import Critic, Extractor, Generator, predictor
-from utils import apply_mask_with_shuffle
 
 
 class ALTASTrainer:
     """Gen / C / P 三方博弈训练器。每次 train_step 包含 n_critic 次 C 更新和 1 次 Gen 更新。"""
-
     HISTORY_KEYS = (
         "loss_c",
         "loss_p",
@@ -93,10 +91,9 @@ class ALTASTrainer:
 
         loss_p = loss_p_full + p_mask_weight * loss_p_mask
         ``p_mask_weight`` 控制稀疏输入下 CE 的权重: 越大越强调"被稀疏后还能学"。
-        掩码输入走 ``apply_mask_with_shuffle``: 被掩位置用 batch 内其他样本的同特征填充,
-        避免"被掩的 0"与"天然接近 0 的特征"在分布上不可分。
+        掩码输入直接 ``x * mask``, 被掩位置退化为 0。
         """
-        x_mask = apply_mask_with_shuffle(x, mask_detached)
+        x_mask = x * mask_detached
         h_full = self.ext(x)
         h_mask = self.ext(x_mask)
         loss_p_full = self.criterion_p(self.predictor(h_full), y)
@@ -109,9 +106,8 @@ class ALTASTrainer:
         return loss_p.item()
 
     def _train_critic_branch(self, x, mask_detached):
-        """轨迹 B: 训练 Critic。Critic 看到的"h_fake"由 shuffle-replace 后的 masked 输入得到,
-        分布偏移更真实 (而非恒为 0 的退化信号)。"""
-        x_mask = apply_mask_with_shuffle(x, mask_detached)
+        """轨迹 B: 训练 Critic。Critic 看到的"h_fake"由被掩输入得到 (x * mask)。"""
+        x_mask = x * mask_detached
         h_real = self.ext(x).detach()
         h_fake = self.ext(x_mask).detach()
 
@@ -128,13 +124,9 @@ class ALTASTrainer:
         return loss_c.item(), w_distance
 
     def _train_generator_branch(self, x, y, tau):
-        """轨迹 C: 训练 Gen, 使 h_fake 既能骗过 Critic 又能用于 P, 并对 pi 加 L1 期望惩罚。
-
-        masked 输入同样走 shuffle-replace, 使 d(x_mask)/d(mask) = x - x_shuffled,
-        梯度信号比纯 0 更强, Gen 学习目标更清晰。
-        """
+        """轨迹 C: 训练 Gen, 使 h_fake 既能骗过 Critic 又能用于 P, 并对 pi 加 L1 期望惩罚。"""
         pi, mask = self.gen(x, tau=tau, hard=True)
-        x_mask = apply_mask_with_shuffle(x, mask)
+        x_mask = x * mask
         h_g = self.ext(x_mask)
 
         gen_loss_adv = -self.critic(h_g).mean()
@@ -155,19 +147,11 @@ class ALTASTrainer:
         }
 
     def _eval_acc(self, x, y, mask, use_full=False):
-        h = self.ext(x) if use_full else self.ext(apply_mask_with_shuffle(x, mask))
+        h = self.ext(x) if use_full else self.ext(x * mask)
         return (self.predictor(h).argmax(dim=1) == y).float().mean().item()
 
     def train_step(self, x, y, tau: float = 1.0) -> Dict[str, float]:
-        """完整的一次 train_step：包含 n_critic 次 Critic 更新和 1 次 Gen 更新。
-
-        注意: 由于 Critic 内部对 Ext 做了 detach，Predictor 与 Gen 链路均不会因对方更新而漂移。
-
-        返回值中的两条 accuracy 含义:
-          - ``full_x_acc``: 用原始全量特征 X 作为输入时的分类准确率（看 P 的上限）
-          - ``mask_x_acc``: 用 Generator 选出的稀疏子集经 shuffle-replace 后输入 P 得到的准确率,
-            与训练时使用的 masked 输入分布一致, 避免分布漂移造成的指标虚高。
-        """
+        """完整的一次 train_step：包含 n_critic 次 Critic 更新和 1 次 Gen 更新。"""
         x, y = x.to(self.device), y.to(self.device)
 
         loss_c_acc, loss_p_acc, w_dist_acc = 0.0, 0.0, 0.0
