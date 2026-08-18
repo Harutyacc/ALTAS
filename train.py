@@ -12,6 +12,7 @@ from model import Critic, Extractor, Generator, predictor
 
 class ALTASTrainer:
     """Gen / C / P 三方博弈训练器。每次 train_step 包含 n_critic 次 C 更新和 1 次 Gen 更新。"""
+
     HISTORY_KEYS = (
         "loss_c",
         "loss_p",
@@ -20,6 +21,7 @@ class ALTASTrainer:
         "loss_gen_l1",
         "loss_gen_p",
         "w_distance",
+        "dynamic_gamma",
         "retention_rate",
         "mask_x_acc",
         "full_x_acc",
@@ -30,19 +32,23 @@ class ALTASTrainer:
         input_dim: int,
         num_classes: int,
         device: torch.device,
-        lr_gen: float = 1e-5,
+        lr_gen: float = 1e-4,
         lr_ep: float = 1e-4,
         lambda_gp: float = 10.0,
-        alpha: float = 0.1,
+        alpha: float = 1.0,
         beta: float = 1.0,
-        gamma: float = 1.0,
-        n_critic: int = 3,
+        gamma_init: float = 0.5,
+        lr_gamma: float = 0.01,
+        target_w_dist: float = 0.05,
+        n_critic: int = 2,
         p_mask_weight: float = 1.0,
     ):
         self.device = device
         self.alpha = alpha
         self.beta = beta
-        self.gamma = gamma
+        self.gamma = gamma_init
+        self.lr_gamma = lr_gamma
+        self.target_w_dist = target_w_dist
         self.lambda_gp = lambda_gp
         self.n_critic = n_critic
         self.p_mask_weight = p_mask_weight
@@ -87,12 +93,7 @@ class ALTASTrainer:
         return ((gradients.view(gradients.size(0), -1).norm(2, dim=1) - 1) ** 2).mean()
 
     def _train_predictor_branch(self, x, y, mask_detached):
-        """轨迹 A: 用完整特征 + 掩码特征共同监督 Ext 和 P。
-
-        loss_p = loss_p_full + p_mask_weight * loss_p_mask
-        ``p_mask_weight`` 控制稀疏输入下 CE 的权重: 越大越强调"被稀疏后还能学"。
-        掩码输入直接 ``x * mask``, 被掩位置退化为 0。
-        """
+        """轨迹 A: 用完整特征 + 掩码特征共同监督 Ext 和 P。"""
         x_mask = x * mask_detached
         h_full = self.ext(x)
         h_mask = self.ext(x_mask)
@@ -106,7 +107,7 @@ class ALTASTrainer:
         return loss_p.item()
 
     def _train_critic_branch(self, x, mask_detached):
-        """轨迹 B: 训练 Critic。Critic 看到的"h_fake"由被掩输入得到 (x * mask)。"""
+        """轨迹 B: 训练 Critic。Critic 看到的 h_fake 由被掩输入得到 (x * mask)。"""
         x_mask = x * mask_detached
         h_real = self.ext(x).detach()
         h_fake = self.ext(x_mask).detach()
@@ -123,8 +124,8 @@ class ALTASTrainer:
 
         return loss_c.item(), w_distance
 
-    def _train_generator_branch(self, x, y, tau):
-        """轨迹 C: 训练 Gen, 使 h_fake 既能骗过 Critic 又能用于 P, 并对 pi 加 L1 期望惩罚。"""
+    def _train_generator_branch(self, x, y, tau, current_w_dist):
+        """轨迹 C: 动态对偶纳什博弈训练 Gen。"""
         pi, mask = self.gen(x, tau=tau, hard=True)
         x_mask = x * mask
         h_g = self.ext(x_mask)
@@ -132,7 +133,12 @@ class ALTASTrainer:
         gen_loss_adv = -self.critic(h_g).mean()
         gen_loss_p = self.criterion_p(self.predictor(h_g), y)
         gen_loss_l1 = pi.mean()
-        loss_gen = self.alpha * gen_loss_adv + self.beta * gen_loss_p + self.gamma * gen_loss_l1
+        
+        loss_gen = (
+            self.alpha * gen_loss_adv 
+            + self.beta * gen_loss_p 
+            + self.gamma * gen_loss_l1
+        )
 
         self.opt_gen.zero_grad()
         loss_gen.backward()
@@ -144,34 +150,41 @@ class ALTASTrainer:
             "loss_gen_p": gen_loss_p.item(),
             "loss_gen_l1": gen_loss_l1.item(),
             "retention_rate": gen_loss_l1.item(),
+            "dynamic_gamma": self.gamma,
         }
+        
+    def update_gamma_per_epoch(self, epoch_avg_w_dist: float):
+        """每个 Epoch 结束时调用一次, 动态对偶 gamma 更新。"""
+        gamma_grad = self.target_w_dist - epoch_avg_w_dist
+        # 每轮微调，平滑更新
+        self.gamma = float(max(0.01, min(5.0, self.gamma + self.lr_gamma * gamma_grad)))
 
     def _eval_acc(self, x, y, mask, use_full=False):
         h = self.ext(x) if use_full else self.ext(x * mask)
         return (self.predictor(h).argmax(dim=1) == y).float().mean().item()
 
     def train_step(self, x, y, tau: float = 1.0) -> Dict[str, float]:
-        """完整的一次 train_step：包含 n_critic 次 Critic 更新和 1 次 Gen 更新。"""
         x, y = x.to(self.device), y.to(self.device)
 
-        loss_c_acc, loss_p_acc, w_dist_acc = 0.0, 0.0, 0.0
+        loss_c_acc, w_dist_acc = 0.0, 0.0
         
-        # 1. 独立更新 Critic，迭代 n_critic 次
+        # 1. 独立更新 Critic n_critic 次
         for _ in range(self.n_critic):
             with torch.no_grad():
                 _, mask = self.gen(x, tau=tau, hard=True)
-            
             loss_c, w_dist = self._train_critic_branch(x, mask)
             loss_c_acc += loss_c
             w_dist_acc += w_dist
             
+        avg_w_dist = w_dist_acc / self.n_critic
+
         # 2. 更新 Predictor & Extractor (EP 链路)
         with torch.no_grad():
             _, mask_ep = self.gen(x, tau=tau, hard=True)
-        loss_p_acc += self._train_predictor_branch(x, y, mask_ep)
+        loss_p = self._train_predictor_branch(x, y, mask_ep)
         
-        # 3. 更新 Generator
-        gen_metrics = self._train_generator_branch(x, y, tau)
+        # 3. 传入当前隐空间分布距离，动态优化更新 Generator
+        gen_metrics = self._train_generator_branch(x, y, tau, current_w_dist=avg_w_dist)
         
         with torch.no_grad():
             _, mask_eval = self.gen(x, tau=tau, hard=True)
@@ -180,8 +193,8 @@ class ALTASTrainer:
 
         return {
             "loss_c": loss_c_acc / self.n_critic,
-            "loss_p": loss_p_acc / self.n_critic,
-            "w_distance": w_dist_acc / self.n_critic,
+            "loss_p": loss_p,
+            "w_distance": avg_w_dist,
             **gen_metrics,
             "mask_x_acc": mask_x_acc,
             "full_x_acc": full_x_acc,

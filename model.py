@@ -38,6 +38,10 @@ class Generator(nn.Module):
             nn.ReLU(),
             nn.Linear(hidden_dim, input_dim * 2),
         )
+        # 初始化末层：让“保留通道 (channel 1)”的 bias 稍微大一点，初期保留率约 40%
+        with torch.no_grad():
+            self.net[-1].bias.data[:input_dim] = 0.0      # 丢弃通道
+            self.net[-1].bias.data[input_dim:] = 0.5     # 保留通道
 
     def forward(self, x, tau=1.0, hard=True):
         logits = self.net(x).view(-1, self.input_dim, 2)

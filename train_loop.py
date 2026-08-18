@@ -60,6 +60,9 @@ def run_training(
                 f"Loss_Gen_l1: {last['loss_gen_l1']:+.3f} | "
                 f"Loss_Gen_p: {last['loss_gen_p']:+.3f} | "
                 f"W_Distance: {last['w_distance']:+.3f} |"
+                f"Gamma: {last['dynamic_gamma']:.3f} |"
             )
+            
+        trainer.update_gamma_per_epoch(epoch_sums["w_distance"] / num_batches)
 
     return history

@@ -1,0 +1,12 @@
+[System] Run dir: output/run_20260818_152502
+[System] 正在使用 cuda 进行计算...
+
+[System] 开始训练多任务共享特征架构...
+Epoch [010/500] | Tau: 0.951 | Loss_C: +0.085 | Loss_P: +1.348 | Full_X_Acc: 64.3% | Loss_Gen: +0.668 | Retain: 5.8% | Mask_X_Acc: 51.9% | Loss_Gen_adv: -0.062 | Loss_Gen_l1: +0.058 | Loss_Gen_p: +0.697 | W_Distance: +0.025 |Gamma: 0.590 |
+Epoch [020/500] | Tau: 0.905 | Loss_C: -0.387 | Loss_P: +1.308 | Full_X_Acc: 71.9% | Loss_Gen: +0.617 | Retain: 2.7% | Mask_X_Acc: 51.1% | Loss_Gen_adv: -0.102 | Loss_Gen_l1: +0.027 | Loss_Gen_p: +0.702 | W_Distance: +0.458 |Gamma: 0.672 |
+Epoch [030/500] | Tau: 0.860 | Loss_C: -0.733 | Loss_P: +1.247 | Full_X_Acc: 76.9% | Loss_Gen: +0.994 | Retain: 2.6% | Mask_X_Acc: 51.7% | Loss_Gen_adv: +0.267 | Loss_Gen_l1: +0.026 | Loss_Gen_p: +0.709 | W_Distance: +0.793 |Gamma: 0.709 |
+Epoch [040/500] | Tau: 0.818 | Loss_C: -1.034 | Loss_P: +1.179 | Full_X_Acc: 82.1% | Loss_Gen: +1.312 | Retain: 2.0% | Mask_X_Acc: 51.0% | Loss_Gen_adv: +0.586 | Loss_Gen_l1: +0.020 | Loss_Gen_p: +0.713 | W_Distance: +1.106 |Gamma: 0.714 |
+Epoch [050/500] | Tau: 0.778 | Loss_C: -1.179 | Loss_P: +1.113 | Full_X_Acc: 85.7% | Loss_Gen: +1.717 | Retain: 1.8% | Mask_X_Acc: 51.0% | Loss_Gen_adv: +0.988 | Loss_Gen_l1: +0.018 | Loss_Gen_p: +0.717 | W_Distance: +1.259 |Gamma: 0.696 |
+Epoch [060/500] | Tau: 0.740 | Loss_C: -1.223 | Loss_P: +1.047 | Full_X_Acc: 89.2% | Loss_Gen: +1.876 | Retain: 1.9% | Mask_X_Acc: 51.3% | Loss_Gen_adv: +1.143 | Loss_Gen_l1: +0.019 | Loss_Gen_p: +0.720 | W_Distance: +1.302 |Gamma: 0.668 |
+Epoch [070/500] | Tau: 0.704 | Loss_C: -1.289 | Loss_P: +0.997 | Full_X_Acc: 92.0% | Loss_Gen: +2.048 | Retain: 2.3% | Mask_X_Acc: 51.0% | Loss_Gen_adv: +1.315 | Loss_Gen_l1: +0.023 | Loss_Gen_p: +0.719 | W_Distance: +1.367 |Gamma: 0.636 |
+Epoch [080/500] | Tau: 0.670 | Loss_C: -1.499 | Loss_P: +0.947 | Full_X_Acc: 93.9% | Loss_Gen: +2.355 | Retain: 1.8% | Mask_X_Acc: 50.9% | Loss_Gen_adv: +1.629 | Loss_Gen_l1: +0.018 | Loss_Gen_p: +0.715 | W_Distance: +1.595 |Gamma: 0.588 |
