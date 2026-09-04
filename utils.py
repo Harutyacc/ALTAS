@@ -1,6 +1,6 @@
 """数据集构造、DataLoader、特征选择评估与可视化工具。"""
 
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -167,7 +167,7 @@ def plot_comparative_tsne(
     """画 1x2 双子图，对比 X_mask 与 h_fake 的 t-SNE 流形。"""
     print(f"\n[Visualization] 运行双视角 t-SNE 降维 (样本数: {len(raw_features)})...")
 
-    common = dict(
+    common: Dict[str, Any] = dict(
         n_components=2,
         random_state=TSNE_RANDOM_STATE,
         perplexity=TSNE_PERPLEXITY,
@@ -276,12 +276,9 @@ def plot_training_loss(
         fontsize=15,
         y=0.995,
     )
-    fig.tight_layout(rect=[0, 0, 1, 0.97])
+    fig.tight_layout(rect=(0, 0, 1, 0.97))
     plt.savefig(save_path, dpi=FIGURE_DPI)
     plt.close(fig)
-
-
-
 
 def plot_retention_vs_accuracy(
     history: Dict[str, list], save_path: str = "fig2_shared_retention.png"

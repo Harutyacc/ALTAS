@@ -1,0 +1,147 @@
+[System] Run dir: output\run_20260831_155057
+[System] 正在使用 cpu 进行计算...
+
+[System] 开始训练多任务共享特征架构...
+Epoch [010/1000] | Tau: 0.951 | Loss_C: +0.104 | Loss_P: +0.393 | Full_X_Acc: 79.4% | Loss_Gen: +0.876 | Retain: 48.2% | Mask_X_Acc: 65.0% | Loss_Gen_adv: +0.061 | Loss_Gen_l1: +0.482 | Loss_Gen_p: +0.671 | W_Distance: -0.002 |
+Epoch [020/1000] | Tau: 0.905 | Loss_C: +0.095 | Loss_P: +0.377 | Full_X_Acc: 80.3% | Loss_Gen: +0.880 | Retain: 45.6% | Mask_X_Acc: 67.4% | Loss_Gen_adv: +0.097 | Loss_Gen_l1: +0.456 | Loss_Gen_p: +0.646 | W_Distance: -0.003 |
+Epoch [030/1000] | Tau: 0.860 | Loss_C: +0.112 | Loss_P: +0.364 | Full_X_Acc: 81.2% | Loss_Gen: +0.846 | Retain: 41.8% | Mask_X_Acc: 70.0% | Loss_Gen_adv: +0.109 | Loss_Gen_l1: +0.418 | Loss_Gen_p: +0.612 | W_Distance: -0.004 |
+Epoch [040/1000] | Tau: 0.818 | Loss_C: +0.136 | Loss_P: +0.345 | Full_X_Acc: 82.1% | Loss_Gen: +0.733 | Retain: 36.5% | Mask_X_Acc: 72.4% | Loss_Gen_adv: +0.051 | Loss_Gen_l1: +0.365 | Loss_Gen_p: +0.572 | W_Distance: -0.003 |
+Epoch [050/1000] | Tau: 0.778 | Loss_C: +0.131 | Loss_P: +0.327 | Full_X_Acc: 82.8% | Loss_Gen: +0.575 | Retain: 30.2% | Mask_X_Acc: 74.4% | Loss_Gen_adv: -0.044 | Loss_Gen_l1: +0.302 | Loss_Gen_p: +0.528 | W_Distance: -0.002 |
+Epoch [060/1000] | Tau: 0.740 | Loss_C: +0.092 | Loss_P: +0.310 | Full_X_Acc: 83.6% | Loss_Gen: +0.411 | Retain: 23.7% | Mask_X_Acc: 77.2% | Loss_Gen_adv: -0.153 | Loss_Gen_l1: +0.237 | Loss_Gen_p: +0.493 | W_Distance: +0.000 |
+Epoch [070/1000] | Tau: 0.704 | Loss_C: +0.033 | Loss_P: +0.294 | Full_X_Acc: 84.7% | Loss_Gen: +0.182 | Retain: 17.9% | Mask_X_Acc: 78.1% | Loss_Gen_adv: -0.342 | Loss_Gen_l1: +0.179 | Loss_Gen_p: +0.471 | W_Distance: +0.005 |
+Epoch [080/1000] | Tau: 0.670 | Loss_C: +0.012 | Loss_P: +0.282 | Full_X_Acc: 85.8% | Loss_Gen: +0.021 | Retain: 13.2% | Mask_X_Acc: 79.0% | Loss_Gen_adv: -0.476 | Loss_Gen_l1: +0.132 | Loss_Gen_p: +0.458 | W_Distance: +0.004 |
+Epoch [090/1000] | Tau: 0.637 | Loss_C: +0.004 | Loss_P: +0.276 | Full_X_Acc: 86.5% | Loss_Gen: -0.070 | Retain: 9.9% | Mask_X_Acc: 79.5% | Loss_Gen_adv: -0.549 | Loss_Gen_l1: +0.099 | Loss_Gen_p: +0.449 | W_Distance: +0.006 |
+Epoch [100/1000] | Tau: 0.606 | Loss_C: -0.002 | Loss_P: +0.268 | Full_X_Acc: 87.3% | Loss_Gen: -0.116 | Retain: 7.8% | Mask_X_Acc: 79.8% | Loss_Gen_adv: -0.580 | Loss_Gen_l1: +0.078 | Loss_Gen_p: +0.441 | W_Distance: +0.009 |
+Epoch [110/1000] | Tau: 0.576 | Loss_C: -0.003 | Loss_P: +0.262 | Full_X_Acc: 87.8% | Loss_Gen: -0.150 | Retain: 6.6% | Mask_X_Acc: 80.1% | Loss_Gen_adv: -0.613 | Loss_Gen_l1: +0.066 | Loss_Gen_p: +0.443 | W_Distance: +0.009 |
+Epoch [120/1000] | Tau: 0.548 | Loss_C: -0.004 | Loss_P: +0.260 | Full_X_Acc: 88.3% | Loss_Gen: -0.133 | Retain: 5.9% | Mask_X_Acc: 79.9% | Loss_Gen_adv: -0.594 | Loss_Gen_l1: +0.059 | Loss_Gen_p: +0.444 | W_Distance: +0.009 |
+Epoch [130/1000] | Tau: 0.521 | Loss_C: -0.005 | Loss_P: +0.257 | Full_X_Acc: 88.5% | Loss_Gen: -0.083 | Retain: 5.4% | Mask_X_Acc: 80.0% | Loss_Gen_adv: -0.541 | Loss_Gen_l1: +0.054 | Loss_Gen_p: +0.441 | W_Distance: +0.011 |
+Epoch [140/1000] | Tau: 0.496 | Loss_C: -0.008 | Loss_P: +0.255 | Full_X_Acc: 89.0% | Loss_Gen: -0.053 | Retain: 5.2% | Mask_X_Acc: 79.7% | Loss_Gen_adv: -0.508 | Loss_Gen_l1: +0.052 | Loss_Gen_p: +0.440 | W_Distance: +0.014 |
+Epoch [150/1000] | Tau: 0.471 | Loss_C: -0.009 | Loss_P: +0.252 | Full_X_Acc: 89.3% | Loss_Gen: -0.035 | Retain: 5.0% | Mask_X_Acc: 79.8% | Loss_Gen_adv: -0.499 | Loss_Gen_l1: +0.050 | Loss_Gen_p: +0.449 | W_Distance: +0.014 |
+Epoch [160/1000] | Tau: 0.448 | Loss_C: -0.010 | Loss_P: +0.249 | Full_X_Acc: 89.8% | Loss_Gen: -0.022 | Retain: 4.8% | Mask_X_Acc: 79.8% | Loss_Gen_adv: -0.491 | Loss_Gen_l1: +0.048 | Loss_Gen_p: +0.454 | W_Distance: +0.015 |
+Epoch [170/1000] | Tau: 0.427 | Loss_C: -0.011 | Loss_P: +0.246 | Full_X_Acc: 90.2% | Loss_Gen: -0.001 | Retain: 4.7% | Mask_X_Acc: 79.8% | Loss_Gen_adv: -0.463 | Loss_Gen_l1: +0.047 | Loss_Gen_p: +0.447 | W_Distance: +0.016 |
+Epoch [180/1000] | Tau: 0.406 | Loss_C: -0.011 | Loss_P: +0.245 | Full_X_Acc: 90.3% | Loss_Gen: +0.013 | Retain: 4.7% | Mask_X_Acc: 79.7% | Loss_Gen_adv: -0.454 | Loss_Gen_l1: +0.047 | Loss_Gen_p: +0.453 | W_Distance: +0.016 |
+Epoch [190/1000] | Tau: 0.386 | Loss_C: -0.012 | Loss_P: +0.243 | Full_X_Acc: 90.6% | Loss_Gen: +0.016 | Retain: 4.6% | Mask_X_Acc: 79.6% | Loss_Gen_adv: -0.459 | Loss_Gen_l1: +0.046 | Loss_Gen_p: +0.461 | W_Distance: +0.017 |
+Epoch [200/1000] | Tau: 0.367 | Loss_C: -0.014 | Loss_P: +0.242 | Full_X_Acc: 90.7% | Loss_Gen: +0.029 | Retain: 4.5% | Mask_X_Acc: 79.7% | Loss_Gen_adv: -0.441 | Loss_Gen_l1: +0.045 | Loss_Gen_p: +0.457 | W_Distance: +0.019 |
+Epoch [210/1000] | Tau: 0.349 | Loss_C: -0.013 | Loss_P: +0.241 | Full_X_Acc: 90.8% | Loss_Gen: +0.039 | Retain: 4.5% | Mask_X_Acc: 79.4% | Loss_Gen_adv: -0.436 | Loss_Gen_l1: +0.045 | Loss_Gen_p: +0.461 | W_Distance: +0.018 |
+Epoch [220/1000] | Tau: 0.332 | Loss_C: -0.014 | Loss_P: +0.240 | Full_X_Acc: 91.4% | Loss_Gen: +0.045 | Retain: 4.4% | Mask_X_Acc: 79.5% | Loss_Gen_adv: -0.429 | Loss_Gen_l1: +0.044 | Loss_Gen_p: +0.461 | W_Distance: +0.019 |
+Epoch [230/1000] | Tau: 0.316 | Loss_C: -0.016 | Loss_P: +0.237 | Full_X_Acc: 91.6% | Loss_Gen: +0.045 | Retain: 4.4% | Mask_X_Acc: 79.6% | Loss_Gen_adv: -0.434 | Loss_Gen_l1: +0.044 | Loss_Gen_p: +0.465 | W_Distance: +0.020 |
+Epoch [240/1000] | Tau: 0.300 | Loss_C: -0.015 | Loss_P: +0.237 | Full_X_Acc: 91.8% | Loss_Gen: +0.049 | Retain: 4.4% | Mask_X_Acc: 79.6% | Loss_Gen_adv: -0.431 | Loss_Gen_l1: +0.044 | Loss_Gen_p: +0.467 | W_Distance: +0.019 |
+Epoch [250/1000] | Tau: 0.286 | Loss_C: -0.014 | Loss_P: +0.236 | Full_X_Acc: 92.0% | Loss_Gen: +0.053 | Retain: 4.3% | Mask_X_Acc: 79.4% | Loss_Gen_adv: -0.428 | Loss_Gen_l1: +0.043 | Loss_Gen_p: +0.468 | W_Distance: +0.019 |
+Epoch [260/1000] | Tau: 0.272 | Loss_C: -0.015 | Loss_P: +0.234 | Full_X_Acc: 92.3% | Loss_Gen: +0.068 | Retain: 4.3% | Mask_X_Acc: 79.6% | Loss_Gen_adv: -0.410 | Loss_Gen_l1: +0.043 | Loss_Gen_p: +0.465 | W_Distance: +0.018 |
+Epoch [270/1000] | Tau: 0.258 | Loss_C: -0.016 | Loss_P: +0.232 | Full_X_Acc: 92.4% | Loss_Gen: +0.083 | Retain: 4.3% | Mask_X_Acc: 79.2% | Loss_Gen_adv: -0.401 | Loss_Gen_l1: +0.043 | Loss_Gen_p: +0.472 | W_Distance: +0.020 |
+Epoch [280/1000] | Tau: 0.246 | Loss_C: -0.014 | Loss_P: +0.235 | Full_X_Acc: 92.6% | Loss_Gen: +0.073 | Retain: 4.3% | Mask_X_Acc: 80.0% | Loss_Gen_adv: -0.408 | Loss_Gen_l1: +0.043 | Loss_Gen_p: +0.468 | W_Distance: +0.018 |
+Epoch [290/1000] | Tau: 0.234 | Loss_C: -0.017 | Loss_P: +0.232 | Full_X_Acc: 92.7% | Loss_Gen: +0.092 | Retain: 4.3% | Mask_X_Acc: 79.5% | Loss_Gen_adv: -0.397 | Loss_Gen_l1: +0.043 | Loss_Gen_p: +0.476 | W_Distance: +0.021 |
+Epoch [300/1000] | Tau: 0.222 | Loss_C: -0.016 | Loss_P: +0.230 | Full_X_Acc: 93.0% | Loss_Gen: +0.087 | Retain: 4.2% | Mask_X_Acc: 79.3% | Loss_Gen_adv: -0.394 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.469 | W_Distance: +0.020 |
+Epoch [310/1000] | Tau: 0.211 | Loss_C: -0.015 | Loss_P: +0.227 | Full_X_Acc: 93.1% | Loss_Gen: +0.107 | Retain: 4.2% | Mask_X_Acc: 79.5% | Loss_Gen_adv: -0.378 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.472 | W_Distance: +0.018 |
+Epoch [320/1000] | Tau: 0.201 | Loss_C: -0.017 | Loss_P: +0.229 | Full_X_Acc: 93.1% | Loss_Gen: +0.111 | Retain: 4.2% | Mask_X_Acc: 79.4% | Loss_Gen_adv: -0.376 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.474 | W_Distance: +0.020 |
+Epoch [330/1000] | Tau: 0.191 | Loss_C: -0.017 | Loss_P: +0.228 | Full_X_Acc: 93.5% | Loss_Gen: +0.138 | Retain: 4.2% | Mask_X_Acc: 79.1% | Loss_Gen_adv: -0.351 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.477 | W_Distance: +0.021 |
+Epoch [340/1000] | Tau: 0.182 | Loss_C: -0.017 | Loss_P: +0.226 | Full_X_Acc: 93.5% | Loss_Gen: +0.130 | Retain: 4.2% | Mask_X_Acc: 79.5% | Loss_Gen_adv: -0.356 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.473 | W_Distance: +0.021 |
+Epoch [350/1000] | Tau: 0.173 | Loss_C: -0.017 | Loss_P: +0.227 | Full_X_Acc: 93.7% | Loss_Gen: +0.149 | Retain: 4.2% | Mask_X_Acc: 79.1% | Loss_Gen_adv: -0.348 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.485 | W_Distance: +0.020 |
+Epoch [360/1000] | Tau: 0.165 | Loss_C: -0.019 | Loss_P: +0.224 | Full_X_Acc: 93.8% | Loss_Gen: +0.148 | Retain: 4.2% | Mask_X_Acc: 79.2% | Loss_Gen_adv: -0.346 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.482 | W_Distance: +0.022 |
+Epoch [370/1000] | Tau: 0.157 | Loss_C: -0.018 | Loss_P: +0.225 | Full_X_Acc: 94.1% | Loss_Gen: +0.161 | Retain: 4.2% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.337 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.485 | W_Distance: +0.021 |
+Epoch [380/1000] | Tau: 0.149 | Loss_C: -0.019 | Loss_P: +0.224 | Full_X_Acc: 94.1% | Loss_Gen: +0.155 | Retain: 4.2% | Mask_X_Acc: 79.1% | Loss_Gen_adv: -0.340 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.482 | W_Distance: +0.022 |
+Epoch [390/1000] | Tau: 0.142 | Loss_C: -0.019 | Loss_P: +0.222 | Full_X_Acc: 94.4% | Loss_Gen: +0.175 | Retain: 4.2% | Mask_X_Acc: 79.0% | Loss_Gen_adv: -0.325 | Loss_Gen_l1: +0.042 | Loss_Gen_p: +0.488 | W_Distance: +0.021 |
+Epoch [400/1000] | Tau: 0.135 | Loss_C: -0.017 | Loss_P: +0.221 | Full_X_Acc: 94.5% | Loss_Gen: +0.195 | Retain: 4.1% | Mask_X_Acc: 79.0% | Loss_Gen_adv: -0.308 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.490 | W_Distance: +0.020 |
+Epoch [410/1000] | Tau: 0.128 | Loss_C: -0.019 | Loss_P: +0.222 | Full_X_Acc: 94.5% | Loss_Gen: +0.189 | Retain: 4.1% | Mask_X_Acc: 79.1% | Loss_Gen_adv: -0.305 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.482 | W_Distance: +0.021 |
+Epoch [420/1000] | Tau: 0.122 | Loss_C: -0.019 | Loss_P: +0.221 | Full_X_Acc: 94.6% | Loss_Gen: +0.197 | Retain: 4.1% | Mask_X_Acc: 79.3% | Loss_Gen_adv: -0.300 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.485 | W_Distance: +0.022 |
+Epoch [430/1000] | Tau: 0.116 | Loss_C: -0.018 | Loss_P: +0.221 | Full_X_Acc: 94.8% | Loss_Gen: +0.202 | Retain: 4.1% | Mask_X_Acc: 78.9% | Loss_Gen_adv: -0.303 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.492 | W_Distance: +0.021 |
+Epoch [440/1000] | Tau: 0.110 | Loss_C: -0.020 | Loss_P: +0.221 | Full_X_Acc: 94.7% | Loss_Gen: +0.222 | Retain: 4.1% | Mask_X_Acc: 79.1% | Loss_Gen_adv: -0.284 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.494 | W_Distance: +0.023 |
+Epoch [450/1000] | Tau: 0.105 | Loss_C: -0.018 | Loss_P: +0.220 | Full_X_Acc: 95.0% | Loss_Gen: +0.217 | Retain: 4.1% | Mask_X_Acc: 79.0% | Loss_Gen_adv: -0.287 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.492 | W_Distance: +0.020 |
+Epoch [460/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.219 | Full_X_Acc: 95.1% | Loss_Gen: +0.238 | Retain: 4.1% | Mask_X_Acc: 78.8% | Loss_Gen_adv: -0.268 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.495 | W_Distance: +0.020 |
+Epoch [470/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.220 | Full_X_Acc: 95.1% | Loss_Gen: +0.232 | Retain: 4.1% | Mask_X_Acc: 79.2% | Loss_Gen_adv: -0.266 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.485 | W_Distance: +0.021 |
+Epoch [480/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.219 | Full_X_Acc: 95.2% | Loss_Gen: +0.251 | Retain: 4.1% | Mask_X_Acc: 78.8% | Loss_Gen_adv: -0.259 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.497 | W_Distance: +0.021 |
+Epoch [490/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.216 | Full_X_Acc: 95.3% | Loss_Gen: +0.274 | Retain: 4.1% | Mask_X_Acc: 79.4% | Loss_Gen_adv: -0.240 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.501 | W_Distance: +0.020 |
+Epoch [500/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.218 | Full_X_Acc: 95.4% | Loss_Gen: +0.270 | Retain: 4.1% | Mask_X_Acc: 78.9% | Loss_Gen_adv: -0.245 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.503 | W_Distance: +0.021 |
+Epoch [510/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.216 | Full_X_Acc: 95.6% | Loss_Gen: +0.277 | Retain: 4.1% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.231 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.496 | W_Distance: +0.021 |
+Epoch [520/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.217 | Full_X_Acc: 95.7% | Loss_Gen: +0.304 | Retain: 4.1% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.213 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.505 | W_Distance: +0.021 |
+Epoch [530/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.215 | Full_X_Acc: 95.9% | Loss_Gen: +0.307 | Retain: 4.1% | Mask_X_Acc: 78.9% | Loss_Gen_adv: -0.213 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.508 | W_Distance: +0.022 |
+Epoch [540/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.215 | Full_X_Acc: 95.9% | Loss_Gen: +0.319 | Retain: 4.1% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.198 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.504 | W_Distance: +0.022 |
+Epoch [550/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.215 | Full_X_Acc: 95.9% | Loss_Gen: +0.323 | Retain: 4.1% | Mask_X_Acc: 78.9% | Loss_Gen_adv: -0.194 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.505 | W_Distance: +0.022 |
+Epoch [560/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.216 | Full_X_Acc: 95.9% | Loss_Gen: +0.322 | Retain: 4.1% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.195 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.505 | W_Distance: +0.021 |
+Epoch [570/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.215 | Full_X_Acc: 96.0% | Loss_Gen: +0.336 | Retain: 4.1% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.178 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.502 | W_Distance: +0.022 |
+Epoch [580/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.213 | Full_X_Acc: 96.1% | Loss_Gen: +0.349 | Retain: 4.1% | Mask_X_Acc: 78.9% | Loss_Gen_adv: -0.170 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.508 | W_Distance: +0.021 |
+Epoch [590/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.213 | Full_X_Acc: 96.0% | Loss_Gen: +0.347 | Retain: 4.1% | Mask_X_Acc: 78.6% | Loss_Gen_adv: -0.173 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.508 | W_Distance: +0.021 |
+Epoch [600/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.214 | Full_X_Acc: 96.1% | Loss_Gen: +0.354 | Retain: 4.1% | Mask_X_Acc: 78.8% | Loss_Gen_adv: -0.157 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.499 | W_Distance: +0.021 |
+Epoch [610/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.211 | Full_X_Acc: 96.4% | Loss_Gen: +0.367 | Retain: 4.1% | Mask_X_Acc: 78.6% | Loss_Gen_adv: -0.154 | Loss_Gen_l1: +0.041 | Loss_Gen_p: +0.509 | W_Distance: +0.021 |
+Epoch [620/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.212 | Full_X_Acc: 96.3% | Loss_Gen: +0.374 | Retain: 4.0% | Mask_X_Acc: 78.8% | Loss_Gen_adv: -0.145 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.506 | W_Distance: +0.020 |
+Epoch [630/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.213 | Full_X_Acc: 96.4% | Loss_Gen: +0.374 | Retain: 4.0% | Mask_X_Acc: 78.6% | Loss_Gen_adv: -0.143 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.504 | W_Distance: +0.022 |
+Epoch [640/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.210 | Full_X_Acc: 96.4% | Loss_Gen: +0.392 | Retain: 4.0% | Mask_X_Acc: 78.6% | Loss_Gen_adv: -0.135 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.515 | W_Distance: +0.021 |
+Epoch [650/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.210 | Full_X_Acc: 96.5% | Loss_Gen: +0.381 | Retain: 4.0% | Mask_X_Acc: 78.9% | Loss_Gen_adv: -0.131 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.500 | W_Distance: +0.020 |
+Epoch [660/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.211 | Full_X_Acc: 96.6% | Loss_Gen: +0.398 | Retain: 4.0% | Mask_X_Acc: 78.2% | Loss_Gen_adv: -0.128 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.514 | W_Distance: +0.021 |
+Epoch [670/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.211 | Full_X_Acc: 96.5% | Loss_Gen: +0.388 | Retain: 4.0% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.134 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.510 | W_Distance: +0.021 |
+Epoch [680/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.209 | Full_X_Acc: 96.7% | Loss_Gen: +0.387 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.133 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.508 | W_Distance: +0.020 |
+Epoch [690/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.209 | Full_X_Acc: 96.7% | Loss_Gen: +0.391 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.138 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.517 | W_Distance: +0.021 |
+Epoch [700/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.209 | Full_X_Acc: 96.7% | Loss_Gen: +0.400 | Retain: 4.0% | Mask_X_Acc: 79.0% | Loss_Gen_adv: -0.125 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.513 | W_Distance: +0.021 |
+Epoch [710/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.211 | Full_X_Acc: 96.9% | Loss_Gen: +0.401 | Retain: 4.0% | Mask_X_Acc: 78.6% | Loss_Gen_adv: -0.125 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.514 | W_Distance: +0.021 |
+Epoch [720/1000] | Tau: 0.100 | Loss_C: -0.017 | Loss_P: +0.209 | Full_X_Acc: 96.8% | Loss_Gen: +0.415 | Retain: 4.0% | Mask_X_Acc: 78.4% | Loss_Gen_adv: -0.108 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.511 | W_Distance: +0.019 |
+Epoch [730/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.209 | Full_X_Acc: 96.8% | Loss_Gen: +0.419 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.109 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.516 | W_Distance: +0.020 |
+Epoch [740/1000] | Tau: 0.100 | Loss_C: -0.017 | Loss_P: +0.207 | Full_X_Acc: 96.8% | Loss_Gen: +0.411 | Retain: 4.0% | Mask_X_Acc: 78.1% | Loss_Gen_adv: -0.118 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.517 | W_Distance: +0.019 |
+Epoch [750/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.208 | Full_X_Acc: 96.9% | Loss_Gen: +0.399 | Retain: 4.0% | Mask_X_Acc: 79.0% | Loss_Gen_adv: -0.117 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.505 | W_Distance: +0.021 |
+Epoch [760/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.207 | Full_X_Acc: 97.1% | Loss_Gen: +0.423 | Retain: 4.0% | Mask_X_Acc: 79.1% | Loss_Gen_adv: -0.103 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.514 | W_Distance: +0.022 |
+Epoch [770/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.207 | Full_X_Acc: 97.0% | Loss_Gen: +0.417 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.109 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.514 | W_Distance: +0.020 |
+Epoch [780/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.207 | Full_X_Acc: 97.1% | Loss_Gen: +0.421 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.104 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.513 | W_Distance: +0.022 |
+Epoch [790/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.207 | Full_X_Acc: 97.1% | Loss_Gen: +0.430 | Retain: 4.0% | Mask_X_Acc: 78.2% | Loss_Gen_adv: -0.103 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.522 | W_Distance: +0.021 |
+Epoch [800/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.207 | Full_X_Acc: 97.1% | Loss_Gen: +0.454 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.088 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.530 | W_Distance: +0.022 |
+Epoch [810/1000] | Tau: 0.100 | Loss_C: -0.017 | Loss_P: +0.207 | Full_X_Acc: 97.3% | Loss_Gen: +0.432 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.092 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.512 | W_Distance: +0.020 |
+Epoch [820/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.207 | Full_X_Acc: 97.1% | Loss_Gen: +0.439 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.086 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.513 | W_Distance: +0.020 |
+Epoch [830/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.207 | Full_X_Acc: 97.3% | Loss_Gen: +0.443 | Retain: 4.0% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.093 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.524 | W_Distance: +0.021 |
+Epoch [840/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.206 | Full_X_Acc: 97.4% | Loss_Gen: +0.453 | Retain: 4.0% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.085 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.526 | W_Distance: +0.020 |
+Epoch [850/1000] | Tau: 0.100 | Loss_C: -0.018 | Loss_P: +0.204 | Full_X_Acc: 97.4% | Loss_Gen: +0.428 | Retain: 4.0% | Mask_X_Acc: 78.1% | Loss_Gen_adv: -0.095 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.511 | W_Distance: +0.020 |
+Epoch [860/1000] | Tau: 0.100 | Loss_C: -0.017 | Loss_P: +0.205 | Full_X_Acc: 97.3% | Loss_Gen: +0.428 | Retain: 4.0% | Mask_X_Acc: 78.4% | Loss_Gen_adv: -0.100 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.516 | W_Distance: +0.019 |
+Epoch [870/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.204 | Full_X_Acc: 97.4% | Loss_Gen: +0.447 | Retain: 4.0% | Mask_X_Acc: 78.6% | Loss_Gen_adv: -0.090 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.525 | W_Distance: +0.021 |
+Epoch [880/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.202 | Full_X_Acc: 97.5% | Loss_Gen: +0.448 | Retain: 4.0% | Mask_X_Acc: 78.3% | Loss_Gen_adv: -0.092 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.528 | W_Distance: +0.022 |
+Epoch [890/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.204 | Full_X_Acc: 97.4% | Loss_Gen: +0.441 | Retain: 4.0% | Mask_X_Acc: 78.6% | Loss_Gen_adv: -0.094 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.523 | W_Distance: +0.022 |
+Epoch [900/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.204 | Full_X_Acc: 97.5% | Loss_Gen: +0.454 | Retain: 4.0% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.079 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.522 | W_Distance: +0.021 |
+Epoch [910/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.203 | Full_X_Acc: 97.5% | Loss_Gen: +0.448 | Retain: 4.0% | Mask_X_Acc: 78.8% | Loss_Gen_adv: -0.083 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.519 | W_Distance: +0.021 |
+Epoch [920/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.204 | Full_X_Acc: 97.6% | Loss_Gen: +0.442 | Retain: 4.0% | Mask_X_Acc: 78.2% | Loss_Gen_adv: -0.086 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.517 | W_Distance: +0.021 |
+Epoch [930/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.203 | Full_X_Acc: 97.7% | Loss_Gen: +0.454 | Retain: 4.0% | Mask_X_Acc: 78.7% | Loss_Gen_adv: -0.080 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.521 | W_Distance: +0.022 |
+Epoch [940/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.204 | Full_X_Acc: 97.7% | Loss_Gen: +0.455 | Retain: 4.0% | Mask_X_Acc: 78.8% | Loss_Gen_adv: -0.068 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.511 | W_Distance: +0.022 |
+Epoch [950/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.203 | Full_X_Acc: 97.8% | Loss_Gen: +0.450 | Retain: 4.0% | Mask_X_Acc: 78.4% | Loss_Gen_adv: -0.081 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.519 | W_Distance: +0.022 |
+Epoch [960/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.203 | Full_X_Acc: 97.7% | Loss_Gen: +0.454 | Retain: 4.0% | Mask_X_Acc: 78.6% | Loss_Gen_adv: -0.073 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.515 | W_Distance: +0.021 |
+Epoch [970/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.202 | Full_X_Acc: 97.6% | Loss_Gen: +0.471 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.069 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.528 | W_Distance: +0.022 |
+Epoch [980/1000] | Tau: 0.100 | Loss_C: -0.019 | Loss_P: +0.201 | Full_X_Acc: 97.8% | Loss_Gen: +0.465 | Retain: 4.0% | Mask_X_Acc: 78.0% | Loss_Gen_adv: -0.069 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.523 | W_Distance: +0.021 |
+Epoch [990/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.202 | Full_X_Acc: 97.7% | Loss_Gen: +0.451 | Retain: 4.0% | Mask_X_Acc: 78.5% | Loss_Gen_adv: -0.080 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.519 | W_Distance: +0.022 |
+Epoch [1000/1000] | Tau: 0.100 | Loss_C: -0.020 | Loss_P: +0.201 | Full_X_Acc: 97.7% | Loss_Gen: +0.447 | Retain: 4.0% | Mask_X_Acc: 78.1% | Loss_Gen_adv: -0.079 | Loss_Gen_l1: +0.040 | Loss_Gen_p: +0.513 | W_Distance: +0.023 |
+[Export] 训练历史已保存至 'output\run_20260831_155057\history.npz'
+
+[System] 开始在测试集上进行推理评估...
+==================================================
+🎯 测试集推理报告 (Shared Architecture)
+==================================================
+• 测试集准确率:     77.10%
+• TPR (召回率):     99.98%
+• FDR (误发现率):   0.18%
+• 平均保留特征数量: 4.0 / 100
+• 整体保留率:       4.01%
+--------------------------------------------------
+🧩 Top 15 最常被选中的特征
+--------------------------------------------------
+Top 01: 特征 Index 008 | 被选次数: 4000 次 (100.0%) | ★ [真实关联]
+Top 02: 特征 Index 009 | 被选次数: 4000 次 (100.0%) | ★ [真实关联]
+Top 03: 特征 Index 006 | 被选次数: 3999 次 (100.0%) | ★ [真实关联]
+Top 04: 特征 Index 007 | 被选次数: 3997 次 ( 99.9%) | ★ [真实关联]
+Top 05: 特征 Index 093 | 被选次数:   12 次 (  0.3%) |   [纯噪声]
+Top 06: 特征 Index 039 | 被选次数:    6 次 (  0.2%) |   [纯噪声]
+Top 07: 特征 Index 064 | 被选次数:    4 次 (  0.1%) |   [纯噪声]
+Top 08: 特征 Index 083 | 被选次数:    4 次 (  0.1%) |   [纯噪声]
+Top 09: 特征 Index 094 | 被选次数:    3 次 (  0.1%) |   [纯噪声]
+Top 10: 特征 Index 090 | 被选次数:    3 次 (  0.1%) |   [纯噪声]
+Top 11: 特征 Index 042 | 被选次数:    1 次 (  0.0%) |   [纯噪声]
+Top 12: 特征 Index 034 | 被选次数:    1 次 (  0.0%) |   [纯噪声]
+Top 13: 特征 Index 023 | 被选次数:    1 次 (  0.0%) |   [纯噪声]
+Top 14: 特征 Index 097 | 被选次数:    0 次 (  0.0%) |   [纯噪声]
+Top 15: 特征 Index 098 | 被选次数:    0 次 (  0.0%) |   [纯噪声]
+==================================================
+[Export] 测试集数组已保存至 'output\run_20260831_155057\test_arrays.npz'
+[Export] 特征索引已保存至 'output\run_20260831_155057\selected_feature_indices.npy'
+[Export] 模型权重已保存至 'output\run_20260831_155057\generator_model.pth'
+
+[Visualization] 运行双视角 t-SNE 降维 (样本数: 4000)...
+[Visualization] 降维: 原始掩码特征 (Before Ext)...
+[Visualization] 降维: 隐空间特征 (After Ext)...
+d:\Workspace\ALTAS\utils.py:213: UserWarning: Glyph 8857 (\N{CIRCLED DOT OPERATOR}) missing from font(s) Arial.
+  plt.tight_layout()
+d:\Workspace\ALTAS\utils.py:214: UserWarning: Glyph 8857 (\N{CIRCLED DOT OPERATOR}) missing from font(s) Arial.
+  plt.savefig(save_path, dpi=FIGURE_DPI, bbox_inches="tight")
+[Visualization] 对比 t-SNE 已保存至: 'output\run_20260831_155057\fig3_tsne_comparison.png'
+

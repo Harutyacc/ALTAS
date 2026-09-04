@@ -6,6 +6,7 @@ from contextlib import contextmanager
 from dataclasses import asdict
 from datetime import datetime
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import torch
@@ -118,7 +119,10 @@ def main():
 
         plot_training_loss(history, save_path=str(run_dir / "fig1_shared_loss.png"))
         plot_retention_vs_accuracy(history, save_path=str(run_dir / "fig2_shared_retention.png"))
-        np.savez(run_dir / "history.npz", **history)
+        history_arrays: dict[str, Any] = {
+            k: np.asarray(v) for k, v in history.items()
+        }
+        np.savez(run_dir / "history.npz", **history_arrays)
         print(f"[Export] 训练历史已保存至 '{run_dir / 'history.npz'}'")
 
         print("\n[System] 开始在测试集上进行推理评估...")

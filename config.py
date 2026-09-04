@@ -17,7 +17,7 @@ TSNE_RANDOM_STATE = 42
 class DataConfig:
     num_samples: int = 20000
     input_dim: int = 100
-    dataset_type: str = "Syn4"
+    dataset_type: str = "Syn3"
     batch_size: int = 256
     train_ratio: float = 0.8
 
