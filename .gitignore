@@ -60,7 +60,8 @@ coverage.xml
 # syn_*.csv
 
 # # Trained model weights
+# *.pt
 # *.pth
 
-# # Feature selection indices (per-run)
+# # Feature selection indices (when exported outside a run directory)
 # selected_feature_indices.npy
