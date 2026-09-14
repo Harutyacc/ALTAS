@@ -22,7 +22,7 @@ class DataConfig:
 
     num_samples: int = 20_000
     input_dim: int = 100
-    dataset_type: str = "Syn4"
+    dataset_type: str = "Syn1"
     batch_size: int = 256
     train_ratio: float = 0.8
 

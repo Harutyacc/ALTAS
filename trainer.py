@@ -5,12 +5,27 @@
 """
 
 from collections.abc import Iterable
+from contextlib import contextmanager
 
 import torch
 from torch import autograd, nn
 
 from masking import apply_shuffle_replacement_mask
 from models import FeatureExtractor, FeatureMaskGenerator, LatentCritic, TaskPredictor
+
+
+@contextmanager
+def _freeze_parameters(modules: Iterable[nn.Module]):
+    """Temporarily freeze module parameters while preserving input gradients."""
+    parameters = [parameter for module in modules for parameter in module.parameters()]
+    requires_grad_states = [parameter.requires_grad for parameter in parameters]
+    try:
+        for parameter in parameters:
+            parameter.requires_grad_(False)
+        yield
+    finally:
+        for parameter, requires_grad in zip(parameters, requires_grad_states):
+            parameter.requires_grad_(requires_grad)
 
 
 class ALTASTrainer:
@@ -136,7 +151,7 @@ class ALTASTrainer:
         masked_loss = self.classification_loss(self.predictor(masked_latent), labels)
         predictor_loss = full_loss + self.masked_prediction_weight * masked_loss
 
-        self.task_optimizer.zero_grad()
+        self.task_optimizer.zero_grad(set_to_none=True)
         predictor_loss.backward()
         self.task_optimizer.step()
         return predictor_loss.item()
@@ -145,11 +160,12 @@ class ALTASTrainer:
         self,
         inputs: torch.Tensor,
         detached_mask: torch.Tensor,
+        real_latent: torch.Tensor,
     ) -> tuple[float, float]:
         """以完整和掩码输入的隐表示更新 WGAN-GP 判别器。"""
         masked_inputs = apply_shuffle_replacement_mask(inputs, detached_mask)
-        real_latent = self.extractor(inputs).detach()
-        masked_latent = self.extractor(masked_inputs).detach()
+        with torch.no_grad():
+            masked_latent = self.extractor(masked_inputs)
 
         real_scores = self.critic(real_latent)
         masked_scores = self.critic(masked_latent)
@@ -161,7 +177,7 @@ class ALTASTrainer:
         )
         wasserstein_distance = (real_scores.mean() - masked_scores.mean()).item()
 
-        self.critic_optimizer.zero_grad()
+        self.critic_optimizer.zero_grad(set_to_none=True)
         critic_loss.backward()
         self.critic_optimizer.step()
         return critic_loss.item(), wasserstein_distance
@@ -173,23 +189,27 @@ class ALTASTrainer:
         temperature: float,
     ) -> dict[str, float]:
         """联合对抗、预测和稀疏目标更新特征掩码生成器。"""
-        retention_probabilities, mask = self.generator(
-            inputs, temperature=temperature, hard=True
-        )
-        masked_inputs = apply_shuffle_replacement_mask(inputs, mask)
-        masked_latent = self.extractor(masked_inputs)
+        frozen_modules = (self.extractor, self.critic, self.predictor)
+        with _freeze_parameters(frozen_modules):
+            retention_probabilities, mask = self.generator(
+                inputs, temperature=temperature, hard=True
+            )
+            masked_inputs = apply_shuffle_replacement_mask(inputs, mask)
+            masked_latent = self.extractor(masked_inputs)
 
-        adversarial_loss = -self.critic(masked_latent).mean()
-        prediction_loss = self.classification_loss(self.predictor(masked_latent), labels)
-        sparsity_loss = retention_probabilities.mean()
-        generator_loss = (
-            self.adversarial_weight * adversarial_loss
-            + self.prediction_weight * prediction_loss
-            + self.sparsity_weight * sparsity_loss
-        )
+            adversarial_loss = -self.critic(masked_latent).mean()
+            prediction_loss = self.classification_loss(
+                self.predictor(masked_latent), labels
+            )
+            sparsity_loss = retention_probabilities.mean()
+            generator_loss = (
+                self.adversarial_weight * adversarial_loss
+                + self.prediction_weight * prediction_loss
+                + self.sparsity_weight * sparsity_loss
+            )
 
-        self.generator_optimizer.zero_grad()
-        generator_loss.backward()
+            self.generator_optimizer.zero_grad(set_to_none=True)
+            generator_loss.backward()
         self.generator_optimizer.step()
 
         return {
@@ -226,6 +246,9 @@ class ALTASTrainer:
         inputs = inputs.to(self.device)
         labels = labels.to(self.device)
 
+        with torch.no_grad():
+            real_latent = self.extractor(inputs)
+
         critic_loss_sum = 0.0
         wasserstein_distance_sum = 0.0
         for _ in range(self.critic_steps):
@@ -234,7 +257,7 @@ class ALTASTrainer:
                     inputs, temperature=temperature, hard=True
                 )
             critic_loss, wasserstein_distance = self._update_critic(
-                inputs, critic_mask
+                inputs, critic_mask, real_latent
             )
             critic_loss_sum += critic_loss
             wasserstein_distance_sum += wasserstein_distance
