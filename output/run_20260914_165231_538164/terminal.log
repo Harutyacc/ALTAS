@@ -1,0 +1,142 @@
+[系统] 输出目录：output\run_20260914_165231_538164
+[系统] 计算设备：cuda
+
+[训练] 开始训练 ALTAS 模型
+C:\Users\caoyi\miniconda3\envs\ml\Lib\site-packages\torch\autograd\graph.py:824: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\cuda\CublasHandlePool.cpp:181.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Epoch [0010/1000] | Temp: 0.951 | Critic: +0.081 | Predictor: +1.035 | Full acc: 53.9% | Generator: +0.832 | Retain: 46.9% | Masked acc: 52.6% | W-distance: -0.000
+Epoch [0020/1000] | Temp: 0.905 | Critic: +0.055 | Predictor: +1.030 | Full acc: 56.4% | Generator: +0.815 | Retain: 41.2% | Masked acc: 52.5% | W-distance: -0.001
+Epoch [0030/1000] | Temp: 0.860 | Critic: +0.033 | Predictor: +1.021 | Full acc: 59.3% | Generator: +0.791 | Retain: 32.5% | Masked acc: 52.6% | W-distance: +0.001
+Epoch [0040/1000] | Temp: 0.818 | Critic: +0.023 | Predictor: +1.006 | Full acc: 62.2% | Generator: +0.764 | Retain: 22.3% | Masked acc: 52.3% | W-distance: +0.001
+Epoch [0050/1000] | Temp: 0.778 | Critic: +0.024 | Predictor: +0.987 | Full acc: 65.6% | Generator: +0.750 | Retain: 13.9% | Masked acc: 51.7% | W-distance: +0.000
+Epoch [0060/1000] | Temp: 0.740 | Critic: +0.028 | Predictor: +0.973 | Full acc: 67.3% | Generator: +0.747 | Retain: 8.9% | Masked acc: 52.3% | W-distance: +0.001
+Epoch [0070/1000] | Temp: 0.704 | Critic: +0.041 | Predictor: +0.962 | Full acc: 69.4% | Generator: +0.746 | Retain: 6.3% | Masked acc: 52.6% | W-distance: -0.000
+Epoch [0080/1000] | Temp: 0.670 | Critic: +0.029 | Predictor: +0.951 | Full acc: 71.0% | Generator: +0.746 | Retain: 5.0% | Masked acc: 51.7% | W-distance: +0.003
+Epoch [0090/1000] | Temp: 0.637 | Critic: +0.016 | Predictor: +0.943 | Full acc: 71.7% | Generator: +0.750 | Retain: 4.3% | Masked acc: 52.8% | W-distance: +0.002
+Epoch [0100/1000] | Temp: 0.606 | Critic: +0.008 | Predictor: +0.931 | Full acc: 72.7% | Generator: +0.755 | Retain: 4.1% | Masked acc: 52.4% | W-distance: +0.003
+Epoch [0110/1000] | Temp: 0.576 | Critic: +0.004 | Predictor: +0.922 | Full acc: 73.6% | Generator: +0.747 | Retain: 4.0% | Masked acc: 53.7% | W-distance: +0.003
+Epoch [0120/1000] | Temp: 0.548 | Critic: -0.001 | Predictor: +0.907 | Full acc: 74.2% | Generator: +0.751 | Retain: 3.9% | Masked acc: 54.6% | W-distance: +0.006
+Epoch [0130/1000] | Temp: 0.521 | Critic: -0.003 | Predictor: +0.903 | Full acc: 75.0% | Generator: +0.756 | Retain: 4.0% | Masked acc: 54.5% | W-distance: +0.006
+Epoch [0140/1000] | Temp: 0.496 | Critic: -0.004 | Predictor: +0.898 | Full acc: 75.8% | Generator: +0.753 | Retain: 4.1% | Masked acc: 55.1% | W-distance: +0.007
+Epoch [0150/1000] | Temp: 0.471 | Critic: -0.002 | Predictor: +0.885 | Full acc: 76.1% | Generator: +0.754 | Retain: 4.2% | Masked acc: 55.3% | W-distance: +0.005
+Epoch [0160/1000] | Temp: 0.448 | Critic: -0.007 | Predictor: +0.876 | Full acc: 76.7% | Generator: +0.748 | Retain: 4.4% | Masked acc: 55.6% | W-distance: +0.009
+Epoch [0170/1000] | Temp: 0.427 | Critic: -0.006 | Predictor: +0.873 | Full acc: 76.9% | Generator: +0.754 | Retain: 4.6% | Masked acc: 56.4% | W-distance: +0.008
+Epoch [0180/1000] | Temp: 0.406 | Critic: -0.007 | Predictor: +0.860 | Full acc: 77.5% | Generator: +0.749 | Retain: 4.7% | Masked acc: 57.4% | W-distance: +0.008
+Epoch [0190/1000] | Temp: 0.386 | Critic: -0.008 | Predictor: +0.853 | Full acc: 78.2% | Generator: +0.741 | Retain: 4.9% | Masked acc: 57.6% | W-distance: +0.010
+Epoch [0200/1000] | Temp: 0.367 | Critic: -0.009 | Predictor: +0.845 | Full acc: 78.1% | Generator: +0.744 | Retain: 5.1% | Masked acc: 58.4% | W-distance: +0.010
+Epoch [0210/1000] | Temp: 0.349 | Critic: -0.008 | Predictor: +0.839 | Full acc: 78.4% | Generator: +0.738 | Retain: 5.2% | Masked acc: 58.4% | W-distance: +0.009
+Epoch [0220/1000] | Temp: 0.332 | Critic: -0.010 | Predictor: +0.828 | Full acc: 78.7% | Generator: +0.731 | Retain: 5.3% | Masked acc: 59.1% | W-distance: +0.012
+Epoch [0230/1000] | Temp: 0.316 | Critic: -0.009 | Predictor: +0.818 | Full acc: 78.9% | Generator: +0.731 | Retain: 5.4% | Masked acc: 59.0% | W-distance: +0.011
+Epoch [0240/1000] | Temp: 0.300 | Critic: -0.010 | Predictor: +0.815 | Full acc: 79.0% | Generator: +0.726 | Retain: 5.5% | Masked acc: 60.0% | W-distance: +0.012
+Epoch [0250/1000] | Temp: 0.286 | Critic: -0.012 | Predictor: +0.811 | Full acc: 79.1% | Generator: +0.724 | Retain: 5.5% | Masked acc: 59.8% | W-distance: +0.014
+Epoch [0260/1000] | Temp: 0.272 | Critic: -0.012 | Predictor: +0.802 | Full acc: 79.3% | Generator: +0.733 | Retain: 5.5% | Masked acc: 59.8% | W-distance: +0.014
+Epoch [0270/1000] | Temp: 0.258 | Critic: -0.014 | Predictor: +0.796 | Full acc: 79.7% | Generator: +0.718 | Retain: 5.5% | Masked acc: 60.7% | W-distance: +0.016
+Epoch [0280/1000] | Temp: 0.246 | Critic: -0.014 | Predictor: +0.790 | Full acc: 79.6% | Generator: +0.712 | Retain: 5.5% | Masked acc: 60.4% | W-distance: +0.016
+Epoch [0290/1000] | Temp: 0.234 | Critic: -0.016 | Predictor: +0.791 | Full acc: 79.7% | Generator: +0.714 | Retain: 5.5% | Masked acc: 60.8% | W-distance: +0.018
+Epoch [0300/1000] | Temp: 0.222 | Critic: -0.016 | Predictor: +0.784 | Full acc: 80.0% | Generator: +0.717 | Retain: 5.5% | Masked acc: 60.6% | W-distance: +0.018
+Epoch [0310/1000] | Temp: 0.211 | Critic: -0.017 | Predictor: +0.784 | Full acc: 80.2% | Generator: +0.715 | Retain: 5.5% | Masked acc: 60.9% | W-distance: +0.019
+Epoch [0320/1000] | Temp: 0.201 | Critic: -0.017 | Predictor: +0.781 | Full acc: 80.2% | Generator: +0.705 | Retain: 5.4% | Masked acc: 61.2% | W-distance: +0.019
+Epoch [0330/1000] | Temp: 0.191 | Critic: -0.018 | Predictor: +0.774 | Full acc: 80.6% | Generator: +0.720 | Retain: 5.4% | Masked acc: 61.1% | W-distance: +0.020
+Epoch [0340/1000] | Temp: 0.182 | Critic: -0.019 | Predictor: +0.771 | Full acc: 80.8% | Generator: +0.711 | Retain: 5.4% | Masked acc: 61.3% | W-distance: +0.021
+Epoch [0350/1000] | Temp: 0.173 | Critic: -0.019 | Predictor: +0.764 | Full acc: 80.4% | Generator: +0.717 | Retain: 5.4% | Masked acc: 60.6% | W-distance: +0.021
+Epoch [0360/1000] | Temp: 0.165 | Critic: -0.019 | Predictor: +0.769 | Full acc: 80.9% | Generator: +0.708 | Retain: 5.4% | Masked acc: 60.9% | W-distance: +0.021
+Epoch [0370/1000] | Temp: 0.157 | Critic: -0.019 | Predictor: +0.767 | Full acc: 80.8% | Generator: +0.711 | Retain: 5.4% | Masked acc: 61.6% | W-distance: +0.022
+Epoch [0380/1000] | Temp: 0.149 | Critic: -0.020 | Predictor: +0.757 | Full acc: 81.3% | Generator: +0.718 | Retain: 5.4% | Masked acc: 61.6% | W-distance: +0.022
+Epoch [0390/1000] | Temp: 0.142 | Critic: -0.020 | Predictor: +0.764 | Full acc: 81.0% | Generator: +0.715 | Retain: 5.4% | Masked acc: 61.9% | W-distance: +0.023
+Epoch [0400/1000] | Temp: 0.135 | Critic: -0.020 | Predictor: +0.750 | Full acc: 81.2% | Generator: +0.712 | Retain: 5.4% | Masked acc: 61.6% | W-distance: +0.023
+Epoch [0410/1000] | Temp: 0.128 | Critic: -0.021 | Predictor: +0.753 | Full acc: 81.8% | Generator: +0.710 | Retain: 5.4% | Masked acc: 62.0% | W-distance: +0.024
+Epoch [0420/1000] | Temp: 0.122 | Critic: -0.023 | Predictor: +0.750 | Full acc: 81.5% | Generator: +0.712 | Retain: 5.4% | Masked acc: 61.6% | W-distance: +0.026
+Epoch [0430/1000] | Temp: 0.116 | Critic: -0.022 | Predictor: +0.749 | Full acc: 82.0% | Generator: +0.717 | Retain: 5.4% | Masked acc: 61.3% | W-distance: +0.025
+Epoch [0440/1000] | Temp: 0.110 | Critic: -0.023 | Predictor: +0.748 | Full acc: 81.4% | Generator: +0.717 | Retain: 5.4% | Masked acc: 62.0% | W-distance: +0.025
+Epoch [0450/1000] | Temp: 0.105 | Critic: -0.023 | Predictor: +0.747 | Full acc: 81.9% | Generator: +0.712 | Retain: 5.4% | Masked acc: 61.4% | W-distance: +0.026
+Epoch [0460/1000] | Temp: 0.100 | Critic: -0.023 | Predictor: +0.741 | Full acc: 82.0% | Generator: +0.709 | Retain: 5.4% | Masked acc: 61.6% | W-distance: +0.026
+Epoch [0470/1000] | Temp: 0.100 | Critic: -0.023 | Predictor: +0.747 | Full acc: 82.2% | Generator: +0.714 | Retain: 5.4% | Masked acc: 61.2% | W-distance: +0.026
+Epoch [0480/1000] | Temp: 0.100 | Critic: -0.023 | Predictor: +0.741 | Full acc: 82.5% | Generator: +0.716 | Retain: 5.4% | Masked acc: 62.1% | W-distance: +0.026
+Epoch [0490/1000] | Temp: 0.100 | Critic: -0.023 | Predictor: +0.743 | Full acc: 81.9% | Generator: +0.721 | Retain: 5.4% | Masked acc: 61.5% | W-distance: +0.026
+Epoch [0500/1000] | Temp: 0.100 | Critic: -0.023 | Predictor: +0.740 | Full acc: 82.5% | Generator: +0.722 | Retain: 5.4% | Masked acc: 61.2% | W-distance: +0.026
+Epoch [0510/1000] | Temp: 0.100 | Critic: -0.022 | Predictor: +0.738 | Full acc: 82.6% | Generator: +0.711 | Retain: 5.4% | Masked acc: 62.0% | W-distance: +0.025
+Epoch [0520/1000] | Temp: 0.100 | Critic: -0.025 | Predictor: +0.737 | Full acc: 82.8% | Generator: +0.719 | Retain: 5.4% | Masked acc: 61.6% | W-distance: +0.028
+Epoch [0530/1000] | Temp: 0.100 | Critic: -0.024 | Predictor: +0.734 | Full acc: 82.7% | Generator: +0.722 | Retain: 5.4% | Masked acc: 61.8% | W-distance: +0.027
+Epoch [0540/1000] | Temp: 0.100 | Critic: -0.024 | Predictor: +0.737 | Full acc: 83.2% | Generator: +0.717 | Retain: 5.4% | Masked acc: 61.9% | W-distance: +0.027
+Epoch [0550/1000] | Temp: 0.100 | Critic: -0.024 | Predictor: +0.739 | Full acc: 83.2% | Generator: +0.724 | Retain: 5.4% | Masked acc: 61.9% | W-distance: +0.027
+Epoch [0560/1000] | Temp: 0.100 | Critic: -0.024 | Predictor: +0.731 | Full acc: 83.2% | Generator: +0.722 | Retain: 5.4% | Masked acc: 62.2% | W-distance: +0.027
+Epoch [0570/1000] | Temp: 0.100 | Critic: -0.024 | Predictor: +0.732 | Full acc: 83.2% | Generator: +0.726 | Retain: 5.4% | Masked acc: 62.5% | W-distance: +0.027
+Epoch [0580/1000] | Temp: 0.100 | Critic: -0.026 | Predictor: +0.731 | Full acc: 83.1% | Generator: +0.721 | Retain: 5.4% | Masked acc: 61.4% | W-distance: +0.029
+Epoch [0590/1000] | Temp: 0.100 | Critic: -0.025 | Predictor: +0.729 | Full acc: 83.2% | Generator: +0.721 | Retain: 5.4% | Masked acc: 62.0% | W-distance: +0.028
+Epoch [0600/1000] | Temp: 0.100 | Critic: -0.026 | Predictor: +0.730 | Full acc: 83.5% | Generator: +0.719 | Retain: 5.4% | Masked acc: 61.4% | W-distance: +0.028
+Epoch [0610/1000] | Temp: 0.100 | Critic: -0.026 | Predictor: +0.723 | Full acc: 83.4% | Generator: +0.728 | Retain: 5.4% | Masked acc: 62.1% | W-distance: +0.029
+Epoch [0620/1000] | Temp: 0.100 | Critic: -0.024 | Predictor: +0.725 | Full acc: 83.7% | Generator: +0.719 | Retain: 5.4% | Masked acc: 62.2% | W-distance: +0.027
+Epoch [0630/1000] | Temp: 0.100 | Critic: -0.025 | Predictor: +0.727 | Full acc: 83.7% | Generator: +0.725 | Retain: 5.5% | Masked acc: 62.3% | W-distance: +0.028
+Epoch [0640/1000] | Temp: 0.100 | Critic: -0.027 | Predictor: +0.724 | Full acc: 83.6% | Generator: +0.733 | Retain: 5.5% | Masked acc: 62.0% | W-distance: +0.030
+Epoch [0650/1000] | Temp: 0.100 | Critic: -0.026 | Predictor: +0.721 | Full acc: 84.0% | Generator: +0.723 | Retain: 5.5% | Masked acc: 61.9% | W-distance: +0.029
+Epoch [0660/1000] | Temp: 0.100 | Critic: -0.026 | Predictor: +0.719 | Full acc: 84.1% | Generator: +0.718 | Retain: 5.5% | Masked acc: 61.6% | W-distance: +0.028
+Epoch [0670/1000] | Temp: 0.100 | Critic: -0.027 | Predictor: +0.718 | Full acc: 83.7% | Generator: +0.723 | Retain: 5.5% | Masked acc: 62.3% | W-distance: +0.029
+Epoch [0680/1000] | Temp: 0.100 | Critic: -0.028 | Predictor: +0.722 | Full acc: 84.4% | Generator: +0.728 | Retain: 5.5% | Masked acc: 61.5% | W-distance: +0.030
+Epoch [0690/1000] | Temp: 0.100 | Critic: -0.028 | Predictor: +0.728 | Full acc: 84.5% | Generator: +0.725 | Retain: 5.5% | Masked acc: 62.1% | W-distance: +0.030
+Epoch [0700/1000] | Temp: 0.100 | Critic: -0.028 | Predictor: +0.716 | Full acc: 84.1% | Generator: +0.721 | Retain: 5.5% | Masked acc: 62.4% | W-distance: +0.031
+Epoch [0710/1000] | Temp: 0.100 | Critic: -0.028 | Predictor: +0.721 | Full acc: 84.6% | Generator: +0.719 | Retain: 5.5% | Masked acc: 61.8% | W-distance: +0.030
+Epoch [0720/1000] | Temp: 0.100 | Critic: -0.029 | Predictor: +0.711 | Full acc: 84.5% | Generator: +0.723 | Retain: 5.5% | Masked acc: 62.3% | W-distance: +0.032
+Epoch [0730/1000] | Temp: 0.100 | Critic: -0.028 | Predictor: +0.715 | Full acc: 84.2% | Generator: +0.720 | Retain: 5.6% | Masked acc: 61.6% | W-distance: +0.031
+Epoch [0740/1000] | Temp: 0.100 | Critic: -0.028 | Predictor: +0.718 | Full acc: 84.5% | Generator: +0.733 | Retain: 5.6% | Masked acc: 62.0% | W-distance: +0.030
+Epoch [0750/1000] | Temp: 0.100 | Critic: -0.029 | Predictor: +0.715 | Full acc: 85.1% | Generator: +0.727 | Retain: 5.6% | Masked acc: 62.2% | W-distance: +0.031
+Epoch [0760/1000] | Temp: 0.100 | Critic: -0.028 | Predictor: +0.715 | Full acc: 84.6% | Generator: +0.725 | Retain: 5.7% | Masked acc: 62.0% | W-distance: +0.030
+Epoch [0770/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.711 | Full acc: 84.7% | Generator: +0.731 | Retain: 5.7% | Masked acc: 62.4% | W-distance: +0.032
+Epoch [0780/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.712 | Full acc: 84.7% | Generator: +0.719 | Retain: 5.7% | Masked acc: 62.1% | W-distance: +0.032
+Epoch [0790/1000] | Temp: 0.100 | Critic: -0.028 | Predictor: +0.715 | Full acc: 85.1% | Generator: +0.727 | Retain: 5.8% | Masked acc: 63.0% | W-distance: +0.030
+Epoch [0800/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.710 | Full acc: 85.2% | Generator: +0.729 | Retain: 5.9% | Masked acc: 62.0% | W-distance: +0.033
+Epoch [0810/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.707 | Full acc: 85.4% | Generator: +0.720 | Retain: 5.9% | Masked acc: 62.8% | W-distance: +0.032
+Epoch [0820/1000] | Temp: 0.100 | Critic: -0.029 | Predictor: +0.708 | Full acc: 85.3% | Generator: +0.724 | Retain: 6.0% | Masked acc: 62.9% | W-distance: +0.031
+Epoch [0830/1000] | Temp: 0.100 | Critic: -0.029 | Predictor: +0.705 | Full acc: 85.3% | Generator: +0.725 | Retain: 6.1% | Masked acc: 62.9% | W-distance: +0.031
+Epoch [0840/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.703 | Full acc: 85.4% | Generator: +0.724 | Retain: 6.2% | Masked acc: 63.0% | W-distance: +0.033
+Epoch [0850/1000] | Temp: 0.100 | Critic: -0.031 | Predictor: +0.707 | Full acc: 85.3% | Generator: +0.723 | Retain: 6.3% | Masked acc: 62.1% | W-distance: +0.033
+Epoch [0860/1000] | Temp: 0.100 | Critic: -0.031 | Predictor: +0.708 | Full acc: 85.4% | Generator: +0.727 | Retain: 6.4% | Masked acc: 62.6% | W-distance: +0.034
+Epoch [0870/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.700 | Full acc: 85.3% | Generator: +0.712 | Retain: 6.5% | Masked acc: 63.8% | W-distance: +0.033
+Epoch [0880/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.696 | Full acc: 85.5% | Generator: +0.721 | Retain: 6.6% | Masked acc: 63.4% | W-distance: +0.032
+Epoch [0890/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.693 | Full acc: 85.6% | Generator: +0.722 | Retain: 6.6% | Masked acc: 63.7% | W-distance: +0.032
+Epoch [0900/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.694 | Full acc: 85.8% | Generator: +0.715 | Retain: 6.7% | Masked acc: 63.3% | W-distance: +0.033
+Epoch [0910/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.695 | Full acc: 85.6% | Generator: +0.719 | Retain: 6.7% | Masked acc: 63.8% | W-distance: +0.032
+Epoch [0920/1000] | Temp: 0.100 | Critic: -0.029 | Predictor: +0.691 | Full acc: 85.6% | Generator: +0.713 | Retain: 6.8% | Masked acc: 63.4% | W-distance: +0.031
+Epoch [0930/1000] | Temp: 0.100 | Critic: -0.032 | Predictor: +0.695 | Full acc: 85.6% | Generator: +0.724 | Retain: 6.8% | Masked acc: 64.2% | W-distance: +0.034
+Epoch [0940/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.695 | Full acc: 85.7% | Generator: +0.720 | Retain: 6.9% | Masked acc: 63.9% | W-distance: +0.032
+Epoch [0950/1000] | Temp: 0.100 | Critic: -0.030 | Predictor: +0.688 | Full acc: 85.5% | Generator: +0.721 | Retain: 6.9% | Masked acc: 64.4% | W-distance: +0.033
+Epoch [0960/1000] | Temp: 0.100 | Critic: -0.032 | Predictor: +0.690 | Full acc: 86.2% | Generator: +0.711 | Retain: 6.9% | Masked acc: 64.8% | W-distance: +0.035
+Epoch [0970/1000] | Temp: 0.100 | Critic: -0.031 | Predictor: +0.690 | Full acc: 85.8% | Generator: +0.717 | Retain: 6.9% | Masked acc: 64.8% | W-distance: +0.034
+Epoch [0980/1000] | Temp: 0.100 | Critic: -0.029 | Predictor: +0.688 | Full acc: 85.7% | Generator: +0.716 | Retain: 6.9% | Masked acc: 64.7% | W-distance: +0.032
+Epoch [0990/1000] | Temp: 0.100 | Critic: -0.032 | Predictor: +0.687 | Full acc: 85.8% | Generator: +0.717 | Retain: 6.9% | Masked acc: 64.0% | W-distance: +0.034
+Epoch [1000/1000] | Temp: 0.100 | Critic: -0.031 | Predictor: +0.687 | Full acc: 85.7% | Generator: +0.723 | Retain: 6.9% | Masked acc: 64.5% | W-distance: +0.034
+[导出] 训练结果已保存至 output\run_20260914_165231_538164
+
+[评估] 开始测试集推理
+================================================================
+测试集评估与特征选择报告
+================================================================
+分类准确率：        64.53%
+真正率（TPR）：     98.87%
+错误发现率（FDR）： 42.39%
+平均保留特征数：    6.9 / 100
+----------------------------------------------------------------
+选择频率最高的 21 个特征
+----------------------------------------------------------------
+Top 01: feature_003 | 选择 3999 次 (100.0%) | 真实相关
+Top 02: feature_010 | 选择 3998 次 ( 99.9%) | 真实相关
+Top 03: feature_005 | 选择 3997 次 ( 99.9%) | 真实相关
+Top 04: feature_002 | 选择 3993 次 ( 99.8%) | 真实相关
+Top 05: feature_004 | 选择 3992 次 ( 99.8%) | 真实相关
+Top 06: feature_000 | 选择 3871 次 ( 96.8%) | 真实相关
+Top 07: feature_001 | 选择 3866 次 ( 96.7%) | 真实相关
+Top 08: feature_039 | 选择    5 次 (  0.1%) | 噪声特征
+Top 09: feature_009 | 选择    5 次 (  0.1%) | 噪声特征
+Top 10: feature_033 | 选择    3 次 (  0.1%) | 噪声特征
+Top 11: feature_007 | 选择    3 次 (  0.1%) | 噪声特征
+Top 12: feature_031 | 选择    2 次 (  0.1%) | 噪声特征
+Top 13: feature_065 | 选择    2 次 (  0.1%) | 噪声特征
+Top 14: feature_017 | 选择    2 次 (  0.1%) | 噪声特征
+Top 15: feature_015 | 选择    1 次 (  0.0%) | 噪声特征
+Top 16: feature_038 | 选择    1 次 (  0.0%) | 噪声特征
+Top 17: feature_046 | 选择    1 次 (  0.0%) | 噪声特征
+Top 18: feature_079 | 选择    1 次 (  0.0%) | 噪声特征
+Top 19: feature_068 | 选择    1 次 (  0.0%) | 噪声特征
+Top 20: feature_088 | 选择    0 次 (  0.0%) | 噪声特征
+Top 21: feature_096 | 选择    0 次 (  0.0%) | 噪声特征
+================================================================
+[导出] 评估结果和模型权重已保存至 output\run_20260914_165231_538164

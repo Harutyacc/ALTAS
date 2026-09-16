@@ -22,7 +22,7 @@ class DataConfig:
 
     num_samples: int = 20_000
     input_dim: int = 100
-    dataset_type: str = "Syn1"
+    dataset_type: str = "Syn5"
     batch_size: int = 256
     train_ratio: float = 0.8
 
@@ -43,7 +43,7 @@ class TrainingConfig:
     epochs: int = 1_000
     generator_learning_rate: float = 1e-5
     task_learning_rate: float = 1e-4
-    adversarial_weight: float = 1.0
+    adversarial_weight: float = 0
     prediction_weight: float = 1.0
     sparsity_weight: float = 0.3
     critic_steps: int = 2
