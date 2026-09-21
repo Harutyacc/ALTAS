@@ -43,9 +43,9 @@ class TrainingConfig:
     epochs: int = 1_000
     generator_learning_rate: float = 1e-5
     task_learning_rate: float = 1e-4
-    adversarial_weight: float = 0
+    adversarial_weight: float = 2
     prediction_weight: float = 1.0
-    sparsity_weight: float = 0.3
+    sparsity_weight: float = 0.5
     critic_steps: int = 2
     gradient_penalty_weight: float = 10.0
     temperature_start: float = 1.0
